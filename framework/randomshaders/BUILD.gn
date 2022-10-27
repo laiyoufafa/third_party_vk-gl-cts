@@ -1,0 +1,87 @@
+# Copyright (c) 2022 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+# framework randomshaders build
+
+import("//build/ohos.gni")
+import("//third_party/VK-GL-CTS/vk_gl_cts.gni")
+
+config("randomshaders_config") {
+  cflags_cc = deqp_common_cflags_cc
+  defines = deqp_common_defines
+}
+
+ohos_source_set("randomshaders_source") {
+  sources = [
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgBinaryOps.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgBuiltinFunctions.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgDefs.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgExecutionContext.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgExpression.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgExpressionGenerator.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgFunctionGenerator.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgGeneratorState.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgNameAllocator.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgParameters.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgPrettyPrinter.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgProgramExecutor.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgProgramGenerator.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgSamplers.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgShader.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgShaderGenerator.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgStatement.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgToken.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgUtils.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgVariable.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgVariableManager.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgVariableType.cpp",
+    "//third_party/VK-GL-CTS/framework/randomshaders/rsgVariableValue.cpp",
+  ]
+
+  include_dirs = deqp_common_include_dirs
+
+  deps = [
+    "//third_party/VK-GL-CTS/framework/common:libdeqp_tcutil",
+    "//third_party/VK-GL-CTS/framework/referencerenderer:libdeqp_referencerenderer",
+    "//third_party/zlib:libz",
+    "//third_party/libpng:libpng",
+  ]
+
+  configs = [ ":randomshaders_config" ]
+
+#   lib_dirs = [
+#     "//third_party/VK-GL-CTS/outlibs"
+#   ]
+#   libs = [
+#     "png",
+#     "z",
+#     # "glslang",
+#     # "SPIRV",
+#     # "SPVRemapper",
+#     # "SPIRV-Tools",
+#     # "SPIRV-Tools-link",
+#     # "SPIRV-Tools-lint",
+#     # "SPIRV-Tools-opt",
+#     # "SPIRV-Tools-reduce",
+#     # "MachineIndependent",
+#     # "OGLCompiler",
+#     # "OSDependent",
+#     # "GenericCodeGen",
+#   ]
+}
+
+ohos_static_library("libdeqp_randomshaders") {
+    deps = [ ":randomshaders_source" ]
+    part_name = "graphic_standard"
+    subsystem_name = "graphic"
+}
