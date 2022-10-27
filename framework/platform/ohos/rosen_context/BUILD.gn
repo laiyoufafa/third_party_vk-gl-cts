@@ -1,0 +1,34 @@
+import("//build/ohos.gni")
+
+ohos_shared_library("rosen_context") {
+  sources = [
+    "ohos_context_i.cpp",
+    "rosen_context_impl.cpp",
+    "raw_context.cpp"
+  ]
+  include_dirs = [
+    # render_service_base include
+    "//foundation/graphic/graphic_2d/rosen/modules/render_service_base/src",
+    "//foundation/graphic/graphic_2d/rosen/include",
+    "//drivers/peripheral/display/interfaces/include",
+    "//foundation/multimedia/image_standard/interfaces/innerkits/include",
+    "//foundation/graphic/graphic_2d/rosen/modules/render_service_base/src/platform/ohos",
+    "//foundation/graphic/graphic_2d/interfaces/innerkits/surface",
+  ]
+
+  deps = [
+    # "//base/hiviewdfx/hilog/interfaces/native/innerkits:libhilog",
+    # "//foundation/graphic/graphic_2d:libvsync_client",
+    # "//foundation/graphic/graphic_2d:libwmclient",
+    # "//foundation/graphic/graphic_2d/rosen/modules/2d_graphics:2d_graphics",
+    # "//foundation/graphic/graphic_2d/rosen/modules/render_service_base:librender_service_base",
+    # "//foundation/graphic/graphic_2d/rosen/modules/render_service_client:librender_service_client",
+    # "//third_party/zlib:libz",
+
+    # "//foundation/window/window_manager/dm:libdm",
+    # "//foundation/window/window_manager/dmserver:libdms",
+    # "//foundation/window/window_manager/wm:libwm",
+    # "//foundation/window/window_manager/wmserver:libwms",
+    "//foundation/graphic/graphic_2d/rosen/modules/render_service_client:librender_service_client",
+  ]
+}
