@@ -35,9 +35,9 @@ namespace vk
 using std::string;
 using std::vector;
 
-// Returns the SPIRV-Tools target environment enum for the given dEQP Spirv validator options object.
+// Returns the spirv-tools target environment enum for the given dEQP Spirv validator options object.
 // Do this here instead of as a method on SpirvValidatorOptions because only this file has access to
-// the SPIRV-Tools headers.
+// the spirv-tools headers.
 static spv_target_env getSpirvToolsEnvForValidatorOptions(SpirvValidatorOptions opts)
 {
 	const bool allow_1_4 = opts.supports_VK_KHR_spirv_1_4;

@@ -29,7 +29,10 @@
 namespace rr
 {
 
-constexpr int NUM_FRAGMENTS_PER_PACKET = 4;
+enum
+{
+	NUM_FRAGMENTS_PER_PACKET	= 4
+};
 
 /*--------------------------------------------------------------------*//*!
  * \brief Fragment packet

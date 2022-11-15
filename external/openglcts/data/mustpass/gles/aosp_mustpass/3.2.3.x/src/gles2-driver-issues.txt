@@ -1,4 +1,4 @@
-#VK-GL-CTS 231
+#vk-gl-cts 231
 dEQP-GLES2.functional.shaders.preprocessor.definitions.undefine_invalid_object_1_vertex
 dEQP-GLES2.functional.shaders.preprocessor.definitions.undefine_invalid_object_1_fragment
 dEQP-GLES2.functional.shaders.preprocessor.definitions.undefine_invalid_object_2_vertex
@@ -14,11 +14,11 @@ dEQP-GLES2.functional.shaders.preprocessor.builtin.line_defined_1_fragment
 dEQP-GLES2.functional.shaders.preprocessor.extensions.after_non_preprocessing_tokens_vertex
 dEQP-GLES2.functional.shaders.preprocessor.extensions.after_non_preprocessing_tokens_fragment
 
-#VK-GL-CTS 232
+#vk-gl-cts 232
 dEQP-GLES2.functional.shaders.constants.const_float_function_gotcha_vertex
 dEQP-GLES2.functional.shaders.constants.const_float_function_gotcha_fragment
 
-#VK-GL-CTS 233
+#vk-gl-cts 233
 dEQP-GLES2.functional.shaders.linkage.varying_type_mismatch_1
 dEQP-GLES2.functional.shaders.linkage.varying_illegal_usage_1
 dEQP-GLES2.functional.shaders.linkage.uniform_struct_type_conflict_1
@@ -29,11 +29,11 @@ dEQP-GLES2.functional.shaders.linkage.uniform_struct_precision_conflict_2
 dEQP-GLES2.functional.shaders.linkage.uniform_struct_precision_conflict_3
 dEQP-GLES2.functional.shaders.linkage.uniform_struct_precision_conflict_4
 
-#VK-GL-CTS 234
+#vk-gl-cts 234
 dEQP-GLES2.functional.shaders.declarations.invalid_declarations.invariant_attribute
 dEQP-GLES2.functional.shaders.declarations.invalid_declarations.invariant_uniform
 
-#VK-GL-CTS 235
+#vk-gl-cts 235
 dEQP-GLES2.functional.shaders.functions.invalid.local_function_prototype_vertex
 dEQP-GLES2.functional.shaders.functions.invalid.local_function_prototype_fragment
 dEQP-GLES2.functional.shaders.functions.invalid.uniform_return_type_vertex
@@ -47,7 +47,7 @@ dEQP-GLES2.functional.shaders.functions.invalid.array_size_from_const_arg_fragme
 dEQP-GLES2.functional.shaders.functions.invalid.double_declare_vertex
 dEQP-GLES2.functional.shaders.functions.invalid.double_declare_fragment
 
-#VK-GL-CTS 236
+#vk-gl-cts 236
 dEQP-GLES2.functional.shaders.keywords.keywords.true_vertex
 dEQP-GLES2.functional.shaders.keywords.keywords.true_fragment
 dEQP-GLES2.functional.shaders.keywords.keywords.false_vertex
@@ -142,7 +142,7 @@ dEQP-GLES2.functional.shaders.keywords.reserved_keywords.cast_fragment
 dEQP-GLES2.functional.shaders.keywords.reserved_keywords.using_vertex
 dEQP-GLES2.functional.shaders.keywords.reserved_keywords.using_fragment
 
-#VK-GL-CTS 239
+#vk-gl-cts 239
 dEQP-GLES2.functional.shaders.scoping.valid.local_variable_hides_function_parameter_vertex
 dEQP-GLES2.functional.shaders.scoping.valid.local_variable_hides_function_parameter_fragment
 dEQP-GLES2.functional.shaders.scoping.invalid.redeclare_function_vertex
@@ -150,20 +150,20 @@ dEQP-GLES2.functional.shaders.scoping.invalid.redeclare_function_fragment
 dEQP-GLES2.functional.shaders.scoping.invalid.redefine_builtin_vertex
 dEQP-GLES2.functional.shaders.scoping.invalid.redefine_builtin_fragment
 
-#VK-GL-CTS 240
+#vk-gl-cts 240
 dEQP-GLES2.functional.shaders.reserved_operators.operator_bitwise_not_vertex
 dEQP-GLES2.functional.shaders.reserved_operators.operator_bitwise_not_fragment
 
-#VK-GL-CTS 241
+#vk-gl-cts 241
 dEQP-GLES2.functional.shaders.builtin_variable.max_varying_vectors_vertex
 dEQP-GLES2.functional.shaders.builtin_variable.max_varying_vectors_fragment
 dEQP-GLES2.functional.shaders.builtin_variable.max_draw_buffers_vertex
 dEQP-GLES2.functional.shaders.builtin_variable.max_draw_buffers_fragment
 
-#VK-GL-CTS 244
+#vk-gl-cts 244
 dEQP-GLES2.functional.shaders.fragdata.invalid_assign_to_1
 
-#VK-GL-CTS 247
+#vk-gl-cts 247
 dEQP-GLES2.functional.texture.mipmap.cube.basic.linear_nearest
 dEQP-GLES2.functional.texture.mipmap.cube.basic.linear_linear
 dEQP-GLES2.functional.texture.mipmap.cube.projected.linear_nearest
@@ -171,7 +171,7 @@ dEQP-GLES2.functional.texture.mipmap.cube.projected.linear_linear
 dEQP-GLES2.functional.texture.mipmap.cube.bias.linear_nearest
 dEQP-GLES2.functional.texture.mipmap.cube.bias.linear_linear
 
-#VK-GL-CTS 248
+#vk-gl-cts 248
 dEQP-GLES2.functional.texture.vertex.cube.filtering.nearest_nearest_clamp
 dEQP-GLES2.functional.texture.vertex.cube.filtering.nearest_nearest_repeat
 dEQP-GLES2.functional.texture.vertex.cube.filtering.nearest_nearest_mirror
@@ -218,11 +218,11 @@ dEQP-GLES2.functional.texture.vertex.cube.wrap.mirror_clamp
 dEQP-GLES2.functional.texture.vertex.cube.wrap.mirror_repeat
 dEQP-GLES2.functional.texture.vertex.cube.wrap.mirror_mirror
 
-#VK-GL-CTS 250
+#vk-gl-cts 250
 dEQP-GLES2.functional.fbo.api.valid_texcube_attachments
 dEQP-GLES2.functional.fbo.api.attachment_query_empty_fbo
 
-#VK-GL-CTS 251
+#vk-gl-cts 251
 dEQP-GLES2.functional.fbo.completeness.renderable.texture.color0.rgb_half_float_oes
 dEQP-GLES2.functional.fbo.completeness.renderable.texture.color0.rgba_half_float_oes
 dEQP-GLES2.functional.fbo.completeness.renderable.texture.color0.rgb8
@@ -236,7 +236,7 @@ dEQP-GLES2.functional.fbo.completeness.renderable.texture.depth.depth_component1
 dEQP-GLES2.functional.fbo.completeness.renderable.texture.depth.depth_component24
 dEQP-GLES2.functional.fbo.completeness.renderable.texture.depth.depth24_stencil8
 
-#VK-GL-CTS 252
+#vk-gl-cts 252
 dEQP-GLES2.functional.negative_api.state.get_framebuffer_attachment_parameteriv
 dEQP-GLES2.functional.negative_api.texture.copyteximage2d_invalid_border_tex2d
 dEQP-GLES2.functional.negative_api.texture.copyteximage2d_invalid_border_cube_pos_x
@@ -247,29 +247,29 @@ dEQP-GLES2.functional.negative_api.texture.copyteximage2d_invalid_border_cube_ne
 dEQP-GLES2.functional.negative_api.texture.copyteximage2d_invalid_border_cube_neg_z
 dEQP-GLES2.functional.negative_api.texture.texsubimage2d_neg_wdt_hgt
 
-#VK-GL-CTS 253
+#vk-gl-cts 253
 dEQP-GLES2.functional.flush_finish.finish
 
-#VK-GL-CTS 300
+#vk-gl-cts 300
 dEQP-GLES2.functional.shaders.functions.invalid.return_array_in_struct_vertex
 dEQP-GLES2.functional.shaders.functions.invalid.return_array_in_struct_fragment
 
-#VK-GL-CTS 301
+#vk-gl-cts 301
 dEQP-GLES2.functional.fbo.api.texture_levels
 
-#VK-GL-CTS 302
+#vk-gl-cts 302
 dEQP-GLES2.functional.fbo.completeness.renderable.renderbuffer.color0.srgb8_alpha8
 dEQP-GLES2.functional.fbo.completeness.renderable.texture.color0.srgb8_alpha8
 
-#VK-GL-CTS 305
+#vk-gl-cts 305
 dEQP-GLES2.functional.negative_api.buffer.framebuffer_texture2d
 dEQP-GLES2.functional.negative_api.shader.shader_binary
 dEQP-GLES2.functional.negative_api.texture.generatemipmap_zero_level_array_compressed
 
-#VK-GL-CTS 308
+#vk-gl-cts 308
 dEQP-GLES2.functional.flush_finish.flush_wait
 
-#VK-GL-CTS 295
+#vk-gl-cts 295
 dEQP-GLES2.functional.texture.mipmap.2d.basic.nearest_nearest_clamp
 dEQP-GLES2.functional.texture.mipmap.2d.basic.nearest_nearest_clamp_non_square
 dEQP-GLES2.functional.texture.mipmap.2d.basic.nearest_nearest_repeat
@@ -307,8 +307,8 @@ dEQP-GLES2.functional.texture.mipmap.cube.projected.nearest_linear
 dEQP-GLES2.functional.texture.mipmap.cube.bias.nearest_nearest
 dEQP-GLES2.functional.texture.mipmap.cube.bias.nearest_linear
 
-#VK-GL-CTS 372
+#vk-gl-cts 372
 dEQP-GLES2.functional.attribute_location.bind_aliasing.max_cond*
 
-#VK-GL-CTS 375
+#vk-gl-cts 375
 dEQP-GLES2.functional.flush_finish.flush

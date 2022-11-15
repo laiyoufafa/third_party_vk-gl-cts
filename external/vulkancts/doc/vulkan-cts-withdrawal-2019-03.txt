@@ -11,7 +11,7 @@ The Khronos Group recommends updating to Vulkan CTS 1.1.3.x and more recent rele
 as early as possible.
 
 This announcement covers the following tags as listed on
-https://github.com/KhronosGroup/VK-GL-CTS/tags:
+https://github.com/KhronosGroup/vk-gl-cts/tags:
 - vulkan-cts-1.1.0.3
 
 More information about Khronos Conformance and withdrawal policies can be found

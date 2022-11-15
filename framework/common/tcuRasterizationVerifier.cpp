@@ -1997,11 +1997,6 @@ bool verifySinglesampleNarrowLineGroupInterpolation (const tcu::Surface& surface
 	return verifyLineGroupPixelIndependentInterpolation(surface, scene, args, log, LINEINTERPOLATION_STRICTLY_CORRECT);
 }
 
-bool verifyLineGroupInterpolationWithNonProjectedWeights (const tcu::Surface& surface, const LineSceneSpec& scene, const RasterizationArguments& args, tcu::TestLog& log)
-{
-	return verifyLineGroupPixelIndependentInterpolation(surface, scene, args, log, LINEINTERPOLATION_STRICTLY_CORRECT);
-}
-
 bool verifyLineGroupInterpolationWithProjectedWeights (const tcu::Surface& surface, const LineSceneSpec& scene, const RasterizationArguments& args, tcu::TestLog& log)
 {
 	return verifyLineGroupPixelIndependentInterpolation(surface, scene, args, log, LINEINTERPOLATION_PROJECTED);
@@ -3008,10 +3003,6 @@ LineInterpolationMethod verifyLineGroupInterpolation (const tcu::Surface& surfac
 		else
 		{
 			if (verifySinglesampleWideLineGroupInterpolation(surface, scene, args, log))
-				return LINEINTERPOLATION_STRICTLY_CORRECT;
-
-			if (scene.allowNonProjectedInterpolation &&
-			    verifyLineGroupInterpolationWithNonProjectedWeights(surface, scene, args, log))
 				return LINEINTERPOLATION_STRICTLY_CORRECT;
 		}
 

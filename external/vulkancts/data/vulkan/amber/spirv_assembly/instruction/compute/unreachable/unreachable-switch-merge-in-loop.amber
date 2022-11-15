@@ -85,7 +85,7 @@ SHADER vertex vtx_shader SPIRV-ASM
 ; goto nor any other equivalent instruction to directly exit the loop.
 ;
 ; The switch's merge block is unreachable and marked with OpUnreachable.
-; According to VK-GL-CTS issue #952, at least one driver goes into an infinite
+; According to vk-gl-cts issue #952, at least one driver goes into an infinite
 ; loop when doing so.
 ;
               %main_start = OpLabel

@@ -393,14 +393,14 @@ def compareRuns(new_result, old_result):
 
     print(f"Comparison done. Results have been written to: {COMP_RESULTS_DIR}")
 
-# Build VK-GL-CTS
+# Build vk-gl-cts
 def buildCts():
     VK_GL_CTS_BUILD_DIR.mkdir(parents=True, exist_ok=True)
 
     FETCH_SOURCES = str(VK_GL_CTS_ROOT_DIR / "external" / "fetch_sources.py")
     run([which("python3"), FETCH_SOURCES], working_dir=VK_GL_CTS_ROOT_DIR)
 
-    # Build VK-GL-CTS
+    # Build vk-gl-cts
     buildType = "-DCMAKE_BUILD_TYPE=" + ARGS.vk_gl_cts_build_type
     run([which("cmake"), "-GNinja", str(VK_GL_CTS_ROOT_DIR), buildType], working_dir=VK_GL_CTS_BUILD_DIR)
     run([which("ninja"), "deqp-vk"], working_dir=VK_GL_CTS_BUILD_DIR)

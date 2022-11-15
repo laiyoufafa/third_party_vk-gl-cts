@@ -369,7 +369,7 @@ codes are allowed:
 	Waiver
 
 Submission package can be verified using `verify_submission.py`
-script located in [VK-GL-CTS-Tools](https://github.com/KhronosGroup/VK-GL-CTS-Tools).
+script located in [vk-gl-cts-Tools](https://github.com/KhronosGroup/vk-gl-cts-Tools).
 
 Vulkan platform port
 --------------------
