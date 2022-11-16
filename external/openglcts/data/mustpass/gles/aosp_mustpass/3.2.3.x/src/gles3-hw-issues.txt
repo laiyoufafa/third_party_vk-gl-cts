@@ -1,4 +1,4 @@
-#VK-GL-CTS 309
+#vk-gl-cts 309
 dEQP-GLES3.functional.polygon_offset.default_result_depth_clamp
 dEQP-GLES3.functional.polygon_offset.default_factor_1_slope
 dEQP-GLES3.functional.polygon_offset.fixed16_result_depth_clamp
@@ -8,6 +8,6 @@ dEQP-GLES3.functional.polygon_offset.fixed24_factor_1_slope
 dEQP-GLES3.functional.polygon_offset.float32_result_depth_clamp
 dEQP-GLES3.functional.polygon_offset.float32_factor_1_slope
 
-#VK-GL-CTS 310
+#vk-gl-cts 310
 dEQP-GLES3.functional.texture.mipmap.cube.max_lod.linear_nearest
 dEQP-GLES3.functional.texture.mipmap.cube.max_lod.linear_linear

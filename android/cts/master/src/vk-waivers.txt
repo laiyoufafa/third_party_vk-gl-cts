@@ -1,5 +1,5 @@
 #
-# VK-GL-CTS Issue #336
+# vk-gl-cts Issue #336
 #
 # This occurs on some versions of Imagination Technologies G6200, G6230, G6400, and G6430
 # Rogue Series 6 GPU's.
@@ -51,7 +51,7 @@ dEQP-VK.glsl.texture_gather.basic.cube.depth32f.base_level.sparse_level_2
 
 
 #
-# VK-GL-CTS Issue #757
+# vk-gl-cts Issue #757
 #
 # This occurs on some versions of Broadcom's Videocore GPUs. On affected devices depth clipping
 # is incorrectly disabled when the viewport minDepth is equal to maxDepth.
@@ -61,7 +61,7 @@ dEQP-VK.draw.dynamic_rendering.inverted_depth_ranges.nodepthclamp_deltazero
 
 
 #
-# VK-GL-CTS Issue #1356
+# vk-gl-cts Issue #1356
 #
 # This occurs on NVIDIA Kepler GPUs. The affected GPUs are unable to reliably synchronize memory
 # accesses at device scope.
@@ -69,10 +69,10 @@ dEQP-VK.draw.dynamic_rendering.inverted_depth_ranges.nodepthclamp_deltazero
 dEQP-VK.memory_model.*core11*.device.*
 
 #
-# VK-GL-CTS CL: 6171
-# VK-GL-CTS issue: 229
-# VK-GL-CTS issue: 2418
-# VK-GL-CTS issue: 2189
+# vk-gl-cts CL: 6171
+# vk-gl-cts issue: 229
+# vk-gl-cts issue: 2418
+# vk-gl-cts issue: 2189
 #
 # IMG Rogue SNORM Waiver.
 #

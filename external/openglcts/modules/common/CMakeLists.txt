@@ -150,7 +150,7 @@ include_directories(${spirv-tools_SOURCE_DIR}/include)
 include_directories(${spirv-tools_SOURCE_DIR}/external/include)
 include_directories(${PROJECT_BINARY_DIR}/external/vulkancts/framework/vulkan)
 
-set(GLCTS_COMMON_LIBS ${GLCTS_COMMON_LIBS} SPIRV-Tools)
+set(GLCTS_COMMON_LIBS ${GLCTS_COMMON_LIBS} spirv-tools)
 
 
 PCH(GLCTS_COMMON_SRCS ../pch.cpp)

@@ -741,7 +741,7 @@ The CTS writes test logs in XML encapsulated in a simple plain-text container
 format. Each tested configuration listed in `cts-run-summary.xml`
 
 To analyse and process the log files, run the following scripts
-- `verify_submission.py` located in [VK-GL-CTS-Tools](https://github.com/KhronosGroup/VK-GL-CTS-Tools): Script that verifies logs based on `cts-run-summary.xml` file.
+- `verify_submission.py` located in [vk-gl-cts-Tools](https://github.com/KhronosGroup/vk-gl-cts-Tools): Script that verifies logs based on `cts-run-summary.xml` file.
 - `scripts/log/log_to_csv.py`: This utility converts `.qpa` log into CSV format. This is
 useful for importing results into other systems.
 - `scripts/log/log_to_xml.py`: Converts `.qpa` into well-formed XML document. The document
@@ -783,15 +783,15 @@ identify the CTS release tag and affected tests.
 
 Creating a Submission Package
 ------------------------
-Please see the [Creating a Submission Package page](https://github.com/KhronosGroup/VK-GL-CTS/wiki/Creating-a-OpenGL-and-OpenGL-ES-Submission-Package).
+Please see the [Creating a Submission Package page](https://github.com/KhronosGroup/vk-gl-cts/wiki/Creating-a-OpenGL-and-OpenGL-ES-Submission-Package).
 
 Submission Update Package
 ------------------------
-Please see the [Submission Update Package page](https://github.com/KhronosGroup/VK-GL-CTS/wiki/Submission-Update-Package).
+Please see the [Submission Update Package page](https://github.com/KhronosGroup/vk-gl-cts/wiki/Submission-Update-Package).
 
 Passing Criteria
 ------------------------
-Please see the [Conformance Submission Passing Criteria page](https://github.com/KhronosGroup/VK-GL-CTS/wiki/OpenGL-and-OpenGL-ES-Conformance-Submission-Passing-Criteria).
+Please see the [Conformance Submission Passing Criteria page](https://github.com/KhronosGroup/vk-gl-cts/wiki/OpenGL-and-OpenGL-ES-Conformance-Submission-Passing-Criteria).
 
 Troubleshooting
 ------------------------

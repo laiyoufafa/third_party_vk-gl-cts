@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# VK-GL-CTS log scrubber
+# vk-gl-cts log scrubber
 # ----------------------
 #
 # Copyright (c) 2019 The Khronos Group Inc.
@@ -33,7 +33,7 @@ assert sys.version_info >= (3, 0)
 
 if len(sys.argv) == 1:
 	print("""
-VK-GL-CTS log scrubber
+vk-gl-cts log scrubber
 ----------------------
 This script attempts to list changed tests since certain time or
 git revision. It does this by looking at git log.

@@ -393,7 +393,7 @@ void logFramebufferConfig (const config::Framebuffer& cfg, tcu::TestLog& log);
 class Checker
 {
 public:
-								Checker					(const glu::RenderContext&, const FormatDB&);
+								Checker					(const glu::RenderContext&);
 	virtual						~Checker				(void) {}
 
 	void						addGLError				(glw::GLenum error, const char* description);
@@ -409,7 +409,6 @@ public:
 
 protected:
 	const glu::RenderContext&	m_renderCtx;
-	const FormatDB&			m_formats;
 
 private:
 	ValidStatusCodes			m_statusCodes;	//< Allowed return values for glCheckFramebufferStatus.
@@ -418,7 +417,7 @@ private:
 class CheckerFactory
 {
 public:
-	virtual Checker*	createChecker	(const glu::RenderContext&, const FormatDB&) = 0;
+	virtual Checker*	createChecker	(const glu::RenderContext&) = 0;
 };
 
 typedef std::set<glw::GLenum> AttachmentPoints;

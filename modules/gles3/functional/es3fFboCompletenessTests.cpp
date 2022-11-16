@@ -24,7 +24,6 @@
 #include "es3fFboCompletenessTests.hpp"
 
 #include "glsFboCompletenessTests.hpp"
-#include "deUniquePtr.hpp"
 #include <sstream>
 
 using namespace glw;
@@ -188,24 +187,20 @@ static const FormatExtEntry s_es3ExtFormats[] =
 class ES3Checker : public Checker
 {
 public:
-				ES3Checker	(const glu::RenderContext& ctx, const FormatDB& formats)
-					: Checker				(ctx, formats)
-					, m_ctxInfo				(glu::ContextInfo::create(ctx))
+				ES3Checker	(const glu::RenderContext& ctx)
+					: Checker				(ctx)
 					, m_numSamples			(-1)
 					, m_depthStencilImage	(0)
 					, m_depthStencilType	(GL_NONE) {}
 	void		check		(GLenum attPoint, const Attachment& att, const Image* image);
 
 private:
-	de::UniquePtr<glu::ContextInfo> m_ctxInfo;
-
 	//! The common number of samples of images.
 	GLsizei		m_numSamples;
 
 	//! The common image for depth and stencil attachments.
 	GLuint		m_depthStencilImage;
 	GLenum		m_depthStencilType;
-	ImageFormat	m_depthStencilFormat;
 };
 
 void ES3Checker::check (GLenum attPoint, const Attachment& att, const Image* image)
@@ -242,28 +237,18 @@ void ES3Checker::check (GLenum attPoint, const Attachment& att, const Image* ima
 			addPotentialFBOStatus(GL_FRAMEBUFFER_INCOMPLETE_MULTISAMPLE, "Number of samples differ");
 	}
 
+	// "Depth and stencil attachments, if present, are the same image."
 	if (attPoint == GL_DEPTH_ATTACHMENT || attPoint == GL_STENCIL_ATTACHMENT)
 	{
 		if (m_depthStencilImage == 0)
 		{
 			m_depthStencilImage = att.imageName;
 			m_depthStencilType = attachmentType(att);
-			m_depthStencilFormat = image->internalFormat;
 		}
-		else if (m_depthStencilImage != att.imageName || m_depthStencilType != attachmentType(att))
+		else
 		{
-			// "Depth and stencil attachments, if present, are the same image."
-			if (!m_ctxInfo->isExtensionSupported("GL_EXT_separate_depth_stencil"))
+			if (m_depthStencilImage != att.imageName || m_depthStencilType != attachmentType(att))
 				addFBOStatus(GL_FRAMEBUFFER_UNSUPPORTED, "Depth and stencil attachments are not the same image");
-
-			// "The combination of internal formats of the attached images does not violate
-			//  an implementation-dependent set of restrictions."
-			ImageFormat depthFormat = attPoint == GL_DEPTH_ATTACHMENT ? image->internalFormat : m_depthStencilFormat;
-			ImageFormat stencilFormat = attPoint == GL_STENCIL_ATTACHMENT ? image->internalFormat : m_depthStencilFormat;
-			if (m_formats.getFormatInfo(depthFormat) & STENCIL_RENDERABLE)
-				addPotentialFBOStatus(GL_FRAMEBUFFER_UNSUPPORTED, "Separate depth attachment has combined depth and stencil format");
-			if (m_formats.getFormatInfo(stencilFormat) & DEPTH_RENDERABLE)
-				addPotentialFBOStatus(GL_FRAMEBUFFER_UNSUPPORTED, "Separate stencil attachment has combined depth and stencil format");
 		}
 	}
 }
@@ -463,7 +448,7 @@ IterateResult NumSamplesTest::build (FboBuilder& builder)
 class ES3CheckerFactory : public CheckerFactory
 {
 public:
-	Checker*			createChecker	(const glu::RenderContext& ctx, const FormatDB& formats) { return new ES3Checker(ctx, formats); }
+	Checker*			createChecker	(const glu::RenderContext& ctx) { return new ES3Checker(ctx); }
 };
 
 class TestGroup : public TestCaseGroup

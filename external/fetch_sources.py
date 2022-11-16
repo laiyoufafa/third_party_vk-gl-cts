@@ -299,9 +299,9 @@ def postExtractLibpng (path):
 
 PACKAGES = [
 	SourcePackage(
-		"http://zlib.net/fossils/zlib-1.2.13.tar.gz",
-		"zlib-1.2.13.tar.gz",
-		"b3a24de97a8fdbc835b9833169501030b8977031bcb54b3b3ac13740f846ab30",
+		"https://sourceforge.net/projects/libpng/files/zlib/1.2.11/zlib-1.2.11.tar.gz",
+		"zlib-1.2.11.tar.gz",
+		"c3e5e9fdd5004dcb542feda5ee4f0ff0744628baf8ed2dd5d66f8ca1197cb1a1",
 		"zlib"),
 	SourcePackage(
 		"http://prdownloads.sourceforge.net/libpng/libpng-1.6.27.tar.gz",
@@ -315,7 +315,7 @@ PACKAGES = [
 		"e7b5f0aa5b1b0eadc63a1c624c0ca7f5af133aa857d6a4271b0ef3d0bdb6868e",
 		"renderdoc"),
 	GitRepo(
-		"https://github.com/KhronosGroup/SPIRV-Tools.git",
+		"https://github.com/KhronosGroup/spirv-tools.git",
 		None,
 		"ee30773650eca50b1cd3c913babcc2b50d7b91fd",
 		"spirv-tools"),

@@ -1,8 +1,8 @@
-#VK-GL-CTS 231
+#vk-gl-cts 231
 dEQP-GLES3.functional.shaders.preprocessor.predefined_macros.line_2_vertex
 dEQP-GLES3.functional.shaders.preprocessor.predefined_macros.line_2_fragment
 
-#VK-GL-CTS 349
+#vk-gl-cts 349
 dEQP-GLES3.functional.fbo.blit.rect.nearest_consistency_out_of_bounds_mag
 dEQP-GLES3.functional.fbo.blit.rect.nearest_consistency_out_of_bounds_mag_reverse_src_x
 dEQP-GLES3.functional.fbo.blit.rect.nearest_consistency_out_of_bounds_mag_reverse_src_y
