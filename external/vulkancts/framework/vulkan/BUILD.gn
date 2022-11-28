@@ -70,7 +70,7 @@ ohos_source_set("deqp_vkutilnoshader_source") {
     "//third_party/vk-gl-cts/framework/opengl:libdeqp_glutil",
     "//third_party/vk-gl-cts/framework/common:libdeqp_tcutil",
     "//third_party/vk-gl-cts/framework/delibs/depool:libdeqp_depool",
-    ":gen_framework_c",
+    #":gen_framework_c",
     "//third_party/glslang/glslang:libdeqp_glslang",
     "//third_party/glslang/glslang:libdeqp_GenericCodeGen",
     "//third_party/glslang/glslang:libdeqp_MachineIndependent",
