@@ -14,6 +14,7 @@
  */
 
 #include <cstdio>
+#include <iostream>
 #include "tcuDefs.hpp"
 #include "tcuCommandLine.hpp"
 #include "tcuPlatform.hpp"
@@ -35,10 +36,7 @@
 #include "modules/gles31/tes31TestPackage.hpp"
 
 #include "ohos_context_i.h"
-// static tcu::TestPackage* createConfigPackage(tcu::TestContext& testCtx)
-// {
-//   return new glcts::ConfigPackage(testCtx, "CTS-Configs");
-// }
+
 #include "tcuTestContext.hpp"
 #include "tcuOhosPlatform.hpp"
 
@@ -187,10 +185,6 @@ int main(int argc, char **argv)
 
         if(1==0)
         {
-//             Test case 'KHR-GLES2.shaders.negative.constant_sequence'..
-// Test case 'KHR-GLES2.shaders.aggressive_optimizations.sin_float_vert'..
-// Test case 'KHR-GLES2.shaders.aggressive_optimizations.sin_float_frag'..
-// Test case 'KHR-GLES2.shaders.aggressive_optimizations.sin_vec2_vert'..
             std::string caseName = "KHR-GLES2.shaders.aggressive_optimizations.sin_float_frag";
             std::vector<std::string> namePath;
             size_t offp = 0;
@@ -213,13 +207,10 @@ int main(int argc, char **argv)
 
             std::vector<tcu::TestNode *> children;
             m_testRoot->getChildren(children);
-            printf("children.size() = %d\n", children.size());
             for (uint32_t i = 0; i < children.size(); i++)
             {
                 std::vector<tcu::TestNode *> casePath;
                 printf("GetPathPath %s\n",GetCasePath(children[i], casePath, namePath)?"true":"false");
-                // tcu::TestNodeType t=children[i]->getNodeType();
-                printf("casePath.size() = %d\n", casePath.size());
                 for(uint32_t j=0;j<casePath.size();j++)
                 {
                     printf("%d %s\n",j,casePath[j]->getName());
@@ -233,35 +224,6 @@ int main(int argc, char **argv)
                 casePath[p]->deinit();
                 printf("run testcast 4\n");
             }
-
-            //         							TestNode				(TestContext& testCtx, TestNodeType nodeType, const char* name, const char* description);
-            // 						TestNode				(TestContext& testCtx, TestNodeType nodeType, const char* name, const char* description, const std::vector<TestNode*>& children);
-            // virtual					~TestNode				(void);
-
-            // TestNodeType			getNodeType				(void) const	{ return m_nodeType;			}
-            // TestContext&			getTestContext			(void) const	{ return m_testCtx;				}
-            // const char*				getName					(void) const	{ return m_name.c_str();		}
-            // const char*				getDescription			(void) const	{ return m_description.c_str(); }
-            // void					getChildren				(std::vector<TestNode*>& children);
-            // void					addChild				(TestNode* node);
-            // bool					empty					() const		{ return m_children.empty();	}
-
-            // virtual void			init					(void);
-            // virtual void			deinit					(void);
-            // virtual IterateResult	iterate					(void) = 0;
-            // virtual TestRunnerType	getRunnerType			(void) const	{ return RUNNERTYPE_NONE;		}
-            // virtual bool			validateRequirements	()				{ return true;					}
-
-            //     enum TestNodeType
-            // {
-            // 	NODETYPE_ROOT = 0,		//!< Root for all test packages.
-            // 	NODETYPE_PACKAGE,		//!< Test case package -- same as group, but is omitted from XML dump.
-            // 	NODETYPE_GROUP,			//!< Test case container -- cannot be executed.
-            // 	NODETYPE_SELF_VALIDATE,	//!< Self-validating test case -- can be executed
-            // 	NODETYPE_PERFORMANCE,	//!< Performace test case -- can be executed
-            // 	NODETYPE_CAPABILITY,	//!< Capability score case -- can be executed
-            // 	NODETYPE_ACCURACY		//!< Accuracy test case -- can be executed
-            // };
             exit(0);
         }
 
