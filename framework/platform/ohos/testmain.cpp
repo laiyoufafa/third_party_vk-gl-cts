@@ -97,31 +97,6 @@ KHR-GLES32
     registry->registerPackage("dEQP-GLES31", createdEQPES31Package);
 }
 
-void InitCase(tcu::TestNode *node)
-{
-
-    switch (node->getNodeType())
-    {
-    case tcu::NODETYPE_PACKAGE: // 1,		//!< Test case package -- same as group, but is omitted from XML dump.
-    case tcu::NODETYPE_GROUP:   // 2,			//!< Test case container -- cannot be executed.
-        node->init();
-    case tcu::NODETYPE_ROOT: // = 0,		//!< Root for all test packages.
-    {
-        std::vector<tcu::TestNode *> children;
-        node->getChildren(children);
-        for (uint32_t i = 0; i < children.size(); i++)
-        {
-            InitCase(children[i]);
-        }
-    }
-    break;
-    case tcu::NODETYPE_SELF_VALIDATE: // 3,	//!< Self-validating test case -- can be executed
-    case tcu::NODETYPE_PERFORMANCE:   // 4,	//!< Performace test case -- can be executed
-    case tcu::NODETYPE_CAPABILITY:    // 5,	//!< Capability score case -- can be executed
-    case tcu::NODETYPE_ACCURACY:      // 6		//!< Accuracy test case -- can be executed
-        break;
-    }
-}
 bool GetCasePath(tcu::TestNode *node, std::vector<tcu::TestNode *> &casePath, std::vector<std::string> &namePath, uint32_t deep = 0)
 {
     if (deep >= namePath.size())
@@ -182,51 +157,6 @@ int main(int argc, char **argv)
         tcu::DirArchive archive(cmdLine.getArchiveDir());
         tcu::TestLog log(cmdLine.getLogFileName(), cmdLine.getLogFlags());
         de::UniquePtr<tcu::Platform> platform(createOhosPlatform());
-
-        if(1==0)
-        {
-            std::string caseName = "KHR-GLES2.shaders.aggressive_optimizations.sin_float_frag";
-            std::vector<std::string> namePath;
-            size_t offp = 0;
-            while (true)
-            {
-                int32_t i = caseName.find_first_of('.', offp);
-                if (i == -1)
-                {
-                    namePath.push_back(caseName.substr(offp));
-                    break;
-                }
-                namePath.push_back(caseName.substr(offp, i - offp));
-                offp = i + 1;
-            }
-            // Create test context
-            tcu::TestContext *m_testCtx = new tcu::TestContext(*platform, archive, log, cmdLine, DE_NULL);
-            // Create root from registry
-            tcu::TestPackageRoot *m_testRoot = new tcu::TestPackageRoot(*m_testCtx, tcu::TestPackageRegistry::getSingleton());
-            InitCase(m_testRoot);
-
-            std::vector<tcu::TestNode *> children;
-            m_testRoot->getChildren(children);
-            for (uint32_t i = 0; i < children.size(); i++)
-            {
-                std::vector<tcu::TestNode *> casePath;
-                printf("GetPathPath %s\n",GetCasePath(children[i], casePath, namePath)?"true":"false");
-                for(uint32_t j=0;j<casePath.size();j++)
-                {
-                    printf("%d %s\n",j,casePath[j]->getName());
-                }
-                uint32_t p=casePath.size()-1;
-                printf("run testcast 1\n");
-                casePath[p]->init();
-                printf("run testcast 2\n");
-                casePath[p]->iterate();
-                printf("run testcast 3\n");
-                casePath[p]->deinit();
-                printf("run testcast 4\n");
-            }
-            exit(0);
-        }
-
         de::UniquePtr<tcu::App> app(new tcu::App(*platform, archive, log, cmdLine));
 
         // Main loop.
