@@ -127,7 +127,6 @@ void deAssertFail (const char* reason, const char* file, int line)
 	raise(SIGTRAP);
 	abort();
 #elif (DE_OS == DE_OS_UNIX)
-//	__assert_fail(reason, file, (unsigned int)line, "Unknown function");
 #elif (DE_OS == DE_OS_QNX)
     __assert(reason, file, (unsigned int)line, "Unknown function");
 #elif (DE_OS == DE_OS_SYMBIAN)
