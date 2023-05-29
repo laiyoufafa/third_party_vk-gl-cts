@@ -117,7 +117,7 @@ OhosRendContext::OhosRendContext(const glu::RenderConfig &config, const tcu::Com
         .alphaBits = 8,
         .depthBits = 24,
         .stencilBits = 8,
-        .numSamples = 8,
+        .numSamples = 4,
     };
     if (config.redBits != -1)
     {
@@ -202,8 +202,20 @@ OhosRendContext::OhosRendContext(const glu::RenderConfig &config, const tcu::Com
     OHOS::OhosContextI::GetInstance().InitEglContext();
     OHOS::OhosContextI::GetInstance().MakeCurrent();
 
-    GLFunctionLoader loader("libEGL_impl.so");
-    glu::initFunctions(&m_glFunctions, &loader, config.type.getAPI());
+    if (config.type.getMajorVersion() == 2)
+    {
+        GLFunctionLoader loader("libGLESv2.so");
+        glu::initFunctions(&m_glFunctions, &loader, config.type.getAPI());
+    }
+    else if (config.type.getMajorVersion() == 3)
+    {
+        GLFunctionLoader loader("libGLESv3.so");
+        glu::initFunctions(&m_glFunctions, &loader, config.type.getAPI());
+    }
+    else
+    {
+        throw tcu::NotSupportedError("not support version");
+    }
     while(m_glFunctions.getError()!=0) 
     {
         printf("err pass\n");
